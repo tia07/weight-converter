@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>weight converter</title>
+	<style type="text/css">
+		body{
+			background: url(car.jpg);
+			background-position:center;
+
+			background-repeat: no-repeat;
+			height: 100vh;
+
+		}
+		h1{
+			color:#745261;
+			font-size: 3em;
+			padding-bottom:35px;
+
+		}
+		#wrap{
+			padding:90px 0px;
+			width: 50%;
+			margin:0 auto;
+			border: 3px solid #745261;
+			text-align: center;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+		}
+		#container{
+			width: 70%;
+			margin: 0 auto;
+		}
+		input{
+			width: 70%;
+			margin:0 auto;
+			padding: 7px 5px;
+			border-radius: 5px;
+			margin-bottom: 25px;
+			font-size: 1em;
+			color: #857F86;
+
+		}
+		input:focus{
+			outline: none;
+		}
+		.output{
+			width: 100%;
+			
+			padding:11px 5px ;
+			margin-bottom: 10px;
+			
+			text-align: left;
+			border-bottom: 1px solid #857F86;
+			color: #857F86;
+		}
+		span{
+			padding-left:10px;
+		}
+		/* media query */
+
+		@media (max-width:800px){
+			#wrap{
+				width: 80%;
+				padding:120px 0px;
+			}
+
+		}
+		@media(max-width: 480px){
+			#wrap{
+				width:95%;
+			}
+			h1{
+				font-size: 2.6em;
+			}
+			#container, input{
+			width: 80%;
+			
+			}
+		
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div id="wrap">
+			<h1>Weight Converter</h1>
+				<input type="number" id="lbsInput" placeholder="Enter pound...">
+			<div id="container">
+				
+				<div class="output">Gram:<span id="gram"></span></div>
+				<div class="output">Kilograms:<span id="kilo"></span></div>
+				<div class="output">Ounces:<span id="ounce"></span></div>
+			</div>
+	</div>
+
+
+
+
+	<script type="text/javascript">
+		
+		document.getElementById('lbsInput').addEventListener('input',function(event){
+			
+			let pounds = document.getElementById("lbsInput").value;
+			// or you can do pounds = event.tartget.value;
+			document.getElementById('gram').innerHTML = pounds/0.0022046;
+			document.getElementById('kilo').innerHTML = pounds/2.2046;
+			document.getElementById('ounce').innerHTML = pounds*16;
+
+		});
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>
